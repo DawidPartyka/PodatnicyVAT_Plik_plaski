@@ -75,7 +75,7 @@ app.post('/getInfo', function(req, res){
           return x;
         },
         start: function(){
-          let val = parsedData.head.date + this.nip + this.bank;
+          let val = parsedData.head.date + this.nip + this.bank; //SHA hash set manually. Only for test for this specific JSON file.
           console.log(val + '\n' + val.length + '\n' + parsedData.head.key.length);
           let search = this.calcSHA512(val, parsedData.head.transformations);
           console.log(search);
