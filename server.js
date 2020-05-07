@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.post('/getInfo', function(req, res){
   //JSON plik płaski
-  let jsonData = require("./20200507.json")
+  let jsonData = require("./20200507.json"); //Stały plik ustawiony wyłącznie do testów
 
   let parsedData = {
     head: {
@@ -94,29 +94,5 @@ app.post('/getInfo', function(req, res){
       }
 
       obj.create();
-      //doSmth(chunk.toString().split(' '));
   });
-  /*fs.readFile('20200507.json', 'utf8', function (err, data) {
-    if (err) throw err;
-    obj = JSON.parse(data);
-    let parsedData = {
-      head: {
-        date: obj.naglowek.dataGenerowaniaDanych,
-        key: obj.naglowek.schemat.substring(0, obj.naglowek.schemat.indexOf(',')),
-        transformations: obj.naglowek.liczbaTransformacji
-      },
-      podCzyn: obj.skrotyPodatnikowCzynnych,
-      podZwol: obj.skrotyPodatnikowZwolnionych,
-      masks: obj.maski
-    }
-
-    console.log(parsedData.head.key);
-    console.log(parsedData.head.date);
-    console.log(parsedData.head.transformations);
-    console.log(parsedData.podCzyn.length);
-    console.log(parsedData.podZwol.length);
-    console.log(parsedData.masks.length);
-  });*/
-
-
 });
