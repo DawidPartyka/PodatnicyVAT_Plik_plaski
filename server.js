@@ -22,15 +22,16 @@ var serverHttps = https.createServer(options, app).listen(httpsPort, () => {
     console.log(">> Server listening at port " + httpsPort);
 });
 
-/*Request | routing handler*/
+/*routing handler*/
 app.use('/index', express.static(__dirname + '/clientFiles'));  //main page
 
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.urlencoded({ extended: true }));
 
+/*Request from the site with NIP and bank account*/
 app.post('/getInfo', function(req, res){
   //JSON plik płaski
-  let jsonData = require("./20200507.json"); //Stały plik ustawiony wyłącznie do testów
+  let jsonData = require("./20200507.json"); //Fixed file set only for tests
 
   let parsedData = {
     head: {
