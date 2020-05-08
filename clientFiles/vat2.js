@@ -1,19 +1,11 @@
 function find(){
-  let nip = $("#nip").val();
-  let bank = $("#bank").val();
+  let nip = $("#nip").val();   //Get value of nip input field
+  let bank = $("#bank").val(); //Get value of bank account number input field
   $.ajax({
           url: '/getInfo',
           type: 'POST',
           contentType: 'plain/text',
-          //contentType: 'application/json',
-          //data: '5223071241 5223071242 5223071243', //NIPy
           data: nip + ' ' + bank, //NIPy
-          //data: '5223071241',
-          /*body: JSON.stringify({
-            contents: {
-                nips: ['5223071241 ','5223071242 ','5223071243']
-              }
-          }),*/
           success: function(response){
             alert(response);
             console.log(response);
