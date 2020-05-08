@@ -54,18 +54,19 @@ app.post('/getInfo', function(req, res){
 
   //POSTed data
   req.on('data', chunk => {
+      //No sanity checks whatsoever. Just a test build.
       let obj = {
-        nip: '',
-        bank: '',
-        status: '',
+        nip: '',    //Placeholder for NIP
+        bank: '',   //Placeholder for bank account number
+        status: '', //Placeholder for the status which will be the response for client
         create: function(){
-          let x = chunk.toString().split(' ');
-          this.nip = x[0];
-          this.bank = x[1];
+          let x = chunk.toString().split(' '); //Data send as plain text divided with space "NIP Bank_account_number" for tests
+          this.nip = x[0];                     //NIP
+          this.bank = x[1];                    //Bank account number
           console.log(this.nip);
           console.log(this.bank);
-
-          this.start();
+            
+          this.start();                        //Start processing data
         },
         getBatch: function(nip, bank){
           let date = parsedData.head.date; //Date from the JSON file
