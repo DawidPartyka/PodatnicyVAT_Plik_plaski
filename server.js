@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.post('/getInfo', function(req, res){
   //JSON plik płaski
-  let jsonData = require("./20200507.json")
+  let jsonData = require("./20200507.json");
 
   let parsedData = {
     head: {
@@ -42,9 +42,9 @@ app.post('/getInfo', function(req, res){
     podZwol: jsonData.skrotyPodatnikowZwolnionych,
     masks: jsonData.maski
   }
-
-  console.log(parsedData.head.key);
+  
   /*
+  console.log(parsedData.head.key);
   console.log(parsedData.head.date);
   console.log(parsedData.head.transformations);
   console.log(parsedData.podCzyn.length);
