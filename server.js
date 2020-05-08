@@ -23,7 +23,7 @@ var serverHttps = https.createServer(options, app).listen(httpsPort, () => {
 });
 
 /*Request | routing handler*/
-app.use('/index', express.static(__dirname + '/clientFiles'));  //main page
+app.use('/index', express.static(__dirname + '/clientFiles'));  //main page https://localhost:8000/index/vat.html
 
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.urlencoded({ extended: true }));
