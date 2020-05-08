@@ -59,7 +59,7 @@ app.post('/getInfo', function(req, res){
         bank: '',
         status: '',
         create: function(){
-          let x = chunk.toString().split(' ');
+          let x = chunk.toString().split(' '); //Data sent as plaint text. Nip and bank account separated by single space. Only for tests 
           this.nip = x[0];
           this.bank = x[1];
           console.log(this.nip);
