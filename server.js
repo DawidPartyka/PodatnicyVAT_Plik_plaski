@@ -108,9 +108,9 @@ app.post('/getInfo', function(req, res){
           this.checkStatus(search); //Find the hashed string in JSON file
         },
         checkStatus: function(shaCheck){
-          if(parsedData.podCzyn.indexOf(shaCheck) >= 0)
+          if(parsedData.podCzyn.indexOf(shaCheck) >= 0)       //Returns -1 for not found
             this.status = 'Czynny podatnik VAT';
-          else if(parsedData.podZwol.indexOf(shaCheck) >= 0)
+          else if(parsedData.podZwol.indexOf(shaCheck) >= 0)  //Returns -1 for not found
             this.status = 'Zwolniony podatnik VAT';
           else
             this.status = 'Nie widnieje na liście podatników VAT';
