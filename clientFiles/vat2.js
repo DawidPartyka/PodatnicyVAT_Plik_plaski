@@ -5,7 +5,7 @@ function find(){
           url: '/getInfo',
           type: 'POST',
           contentType: 'plain/text',
-          data: nip + ' ' + bank, //NIPy
+          data: nip + ' ' + bank, //NIP and bank account
           success: function(response){
             alert(response);
             console.log(response);
