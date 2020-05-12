@@ -46,8 +46,8 @@ app.post('/getInfo', function(req, res){
 
   req.on('data', chunk => {
     let x = chunk.toString().split(' '); //Data sent as plain text divided with space "NIP Bank_account_number" for tests
-    nip = x[0];               //NIP
-    bank = x[1];              //Bank account numver
+    nip = x[0];                          //NIP
+    bank = x[1];                         //Bank account numver
   });
   //console.log(data);
   let parsedData = {
