@@ -1,4 +1,3 @@
-//Stupid and slow. DONT USE
 const httpsPort = 8000;
 
 /*Dependencies*/
