@@ -36,14 +36,13 @@ app.post('/getInfo', function(req, res){
   let parser;                 //Placeholder for JSON parser to pipe
   let hash = '';              //Placeholder for hashed string
   let status = '';            //Placeholder for status to be returned
-
+  let nip = '';               //Placeholder for NIP
+  let bank = '';              //Placeholder for bank account number
+  let startTime = new Date(); //..Only for tests.
   let switchArray = 0;        /*..Variable to differenciate currently processed arrays.
                               Data in parsed streams won't have property "skrotyPodatnikowCzynnych" nor "skrotyPodatnikowZwolnionych",
                               instead will pass only an array.
                               */
-  let startTime = new Date(); //..Only for tests.
-  let nip = '';               //Placeholder for NIP
-  let bank = '';              //Placeholder for bank account number
 
   req.on('data', chunk => {
     let x = chunk.toString().split(' '); //Data sent as plain text divided with space "NIP Bank_account_number" for tests
