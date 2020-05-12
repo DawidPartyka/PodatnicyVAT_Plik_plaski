@@ -123,9 +123,6 @@ app.post('/getInfo', function(req, res){
         if(data.indexOf(hash) >= 0 || switchArray > 2){   //Returns -1 for not found or all arrays have been processed
             stream.unpipe(parser);                        //End stream
             data = [];                                    //Try to empty data
-            delete data.skrotyPodatnikowCzynnych;         //Try to empty data
-            delete data.skrotyPodatnikowZwolnionych;      //Try to empty data
-            delete data.maski;                            //Try to empty data
 
             switch (switchArray) {                        //Distinguish in which array has the hashed string appeared
               case 1:                                     //First array. "podatnicy czynni"
