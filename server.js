@@ -84,7 +84,7 @@ app.post('/getInfo', function(req, res){
     }
 
     for(let i = 0; i < t; i++){ //..t - number of transformations given in file
-      batch = sha512(batch);    //..one SHA512 transformations
+      batch = sha512(batch);    //..one SHA512 transformation
     }
 
     return batch;
@@ -110,7 +110,7 @@ app.post('/getInfo', function(req, res){
     }
     else{
       if(hash == false)
-        hash = getHash(); //Create hashed string based on received data from header
+        hash = getHash();        //Create hashed string based on received data from header
 
       if(data instanceof Array){ //Check if currently processed data is an array (only SHA512 data will be passed in array)
         switchArray++;           /*..Tells which array is currently processed
