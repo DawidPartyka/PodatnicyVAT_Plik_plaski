@@ -30,6 +30,7 @@ app.use('/index', express.static(__dirname + '/clientFiles'));  //main page http
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.urlencoded({ extended: true }));
 
+//Received POST request from client
 app.post('/getInfo', function(req, res){
   let stream;                 //Placeholder for creating a JSON stream to parse
   let parser;                 //Placeholder for JSON parser to pipe
